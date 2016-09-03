@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="leave" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="130,7,48,48" name="start1">
+      <transition g="-45,-22" name="开始" to="开始"/>
+   </start>
+   <task assignee="#{owner}" form="request.jsp" g="104,99,142,32" name="鐢宠">
+      <transition g="-16,-12" name="缁忕悊瀹℃壒" to="缁忕悊瀹℃壒"/>
+   </task>
+   <task assignee="manager" form="manager.jsp" g="123,160,124,34" name="缁忕悊瀹℃壒">
+      <transition g="-79,-22" name="to exclusive1" to="exclusive1"/>
+      <transition g="308,156:-7,-10" name="椹冲洖" to="鐢宠"/>
+   </task>
+   <task assignee="boss" g="340,237,92,33" name="鑰佹澘瀹℃壒">
+      <transition g="-50,-22" name="end1" to="end1"/>
+   </task>
+   <decision expr="#{day>3 ? 'to 鑰佹澘瀹℃壒':'to end1'}" g="174,211,48,48" name="exclusive1">
+      <transition g="-69,-22" name="to 鑰佹澘瀹℃壒" to="鑰佹澘瀹℃壒"/>
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </decision>
+   <end g="180,288,53,39" name="end1"/>
+</process>

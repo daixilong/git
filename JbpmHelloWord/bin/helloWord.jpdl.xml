@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="helloWord" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="238,20,48,48" name="start1">
+      <transition g="-56,-22" name="to state1" to="state1"/>
+   </start>
+   <state g="197,183,120,61" name="state1">
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </state>
+   <end g="230,295,51,34" name="end1"/>
+   <end name="end2" g="432,47,48,48"/>
+   <end-cancel name="cancel1" g="379,121,82,38"/>
+   <end-error name="error1" g="517,154,48,48"/>
+</process>

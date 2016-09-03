@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 测试组<process name="Group" xmlns="http://jbpm.org/4.4/jpdl"> -->
+<process name="event" xmlns="http://jbpm.org/4.4/jpdl">
+   <start name="start1" g="173,11,174,64">
+   		 <on event="start">  
+            <event-listener class="com.demo.ProcessListener" />  
+        </on>  
+        <on event="end">  
+            <event-listener class="com.demo.ProcessListener" />  
+        </on>  
+      <transition name="to task1" to="task1" g="-52,-22"/>
+   </start>
+   <end name="end1" g="164,264,77,69"/>
+   <task name="task1" g="121,117,121,42" candidate-groups="dev">
+   		<on event="start">  
+            <event-listener class="com.demo.ProcessListener" />  
+        </on>  
+        <on event="end">  
+            <event-listener class="com.demo.ProcessListener" />  
+        </on> 
+      <transition name="to end1" to="end1" g="-50,-22"/>
+   </task>
+</process>
